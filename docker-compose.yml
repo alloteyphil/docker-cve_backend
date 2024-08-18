@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./cve-server
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGODB_URI=mongodb+srv://alloteyphilip:zbBJjAEFOS9Kx0LL@cluster0.myb7j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    volumes:
+      - ./cve-server:/usr/src/app
+    command: npm start
